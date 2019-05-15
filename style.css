@@ -15,6 +15,7 @@ height: 65px;
 }
 
 .brocks-w {
+  z-index: 1;
   height: 30px;
   background-color: black;
 }
@@ -25,4 +26,15 @@ height: 65px;
   border: 1px solid #ffffff;
   float: left;
   background-color: red;
+}
+
+.space {
+  height: 325px;
+}
+
+.racket {
+  width: 126px;
+  height: 15px;
+  background-color: black;
+  margin-left: 337px;
 }
