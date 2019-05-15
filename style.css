@@ -1,3 +1,11 @@
 body {
   background-color: #ffffff;
 }
+
+.game-area{
+  width: 800px;
+  height: 600px;
+  margin: auto;
+  border: solid #000000;
+  background-color: #ffffff;
+}
