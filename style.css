@@ -2,10 +2,37 @@ body {
   background-color: #ffffff;
 }
 
-.game-area{
+.game-area {
   width: 800px;
   height: 600px;
   margin: auto;
   border: solid #000000;
   background-color: #ffffff;
+}
+
+.top {
+height: 65px;
+}
+
+.brocks-w {
+  height: 30px;
+  background-color: black;
+}
+
+.brocks-h {
+  width: 98px;
+  height: 30px;
+  border: 1px solid #ffffff;
+  float: left;
+  background-color: red;
+}
+
+.space {
+  height: 30px;
+}
+
+.test {
+  height: 30px;
+  width: 100px;
+  background-color: blue;
 }
