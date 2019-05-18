@@ -5,6 +5,8 @@
   const ball = document.getElementById('ball');
   const racket = document.getElementById('racket');
   const start_button = document.getElementById('start-button');
+  const go_left = document.getElementById('go-left');
+  const go_right = document.getElementById('go-right');
 
   let margin_top_value = 520;
   let vertically = -6;
@@ -21,12 +23,24 @@
   }
 
   let racket_margin_left = 337;
-  document.body.onkeydown = (event) => {
-    console.log(event);
-    if (event.key === 'h') racket_margin_left -= 15;
-    if (event.key === 'l') racket_margin_left += 15;
+  
+  go_left.onclick = () => {
+    racket_margin_left -= 15;
     racket.style.marginLeft = racket_margin_left + 'px';
   }
+  
+  go_right.onclick = () => {
+    racket_margin_left += 15;
+    racket.style.marginLeft = racket_margin_left + 'px';
+  }
+  
+  document.body.onkeydown = (event) => {
+    console.log(event);
+    if (event.key === 'h') go_left.onclick()
+    if (event.key === 'l') go_right.onclick()
+    if (event.keyCode === 32) start_button.onclick();
+  }
+
 
   start_button.onclick = () => {
     setInterval(move_ball, 40);
