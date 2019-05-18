@@ -4,6 +4,7 @@
 
   const ball = document.getElementById('ball');
   const racket = document.getElementById('racket');
+  const start_button = document.getElementById('start-button');
 
   let margin_top_value = 520;
   let vertically = -6;
@@ -27,5 +28,12 @@
     racket.style.marginLeft = racket_margin_left + 'px';
   }
 
-  //setInterval(move_ball, 40);
+  start_button.onclick = () => {
+    setInterval(move_ball, 40);
+  }
+
+  document.body.onkeydown = (event) => {
+    if (event.keyCode === 32) start_button.onclick();
+  }
+
 })();
