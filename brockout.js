@@ -34,6 +34,10 @@
     racket.style.marginLeft = racket_margin_left + 'px';
   }
   
+  start_button.onclick = () => {
+    setInterval(move_ball, 40);
+  }
+  
   document.body.onkeydown = (event) => {
     console.log(event);
     if (event.key === 'h') go_left.onclick()
@@ -41,13 +45,5 @@
     if (event.keyCode === 32) start_button.onclick();
   }
 
-
-  start_button.onclick = () => {
-    setInterval(move_ball, 40);
-  }
-
-  document.body.onkeydown = (event) => {
-    if (event.keyCode === 32) start_button.onclick();
-  }
 
 })();
