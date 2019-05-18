@@ -34,10 +34,12 @@
     racket.style.marginLeft = racket_margin_left + 'px';
   }
   
+  let move_ball_intervalID;
   start_button.onclick = () => {
-    setInterval(move_ball, 40);
+    clearInterval(move_ball_intervalID);
+    move_ball_intervalID = setInterval(move_ball, 40);
   }
-  
+
   document.body.onkeydown = (event) => {
     console.log(event);
     if (event.key === 'h') go_left.onclick()
