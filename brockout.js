@@ -22,8 +22,8 @@
   let racket_margin_left = 337;
   document.body.onkeydown = (event) => {
     console.log(event);
-    if(event.key === 'h') racket_margin_left -= 15;
-    if(event.key === 'l') racket_margin_left += 15;
+    if (event.key === 'h') racket_margin_left -= 15;
+    if (event.key === 'l') racket_margin_left += 15;
     racket.style.marginLeft = racket_margin_left + 'px';
   }
 
