@@ -7,6 +7,19 @@
   const start_button = document.getElementById('start-button');
   const go_left = document.getElementById('go-left');
   const go_right = document.getElementById('go-right');
+  const blocksID = [get_blockID(0), get_blockID(1), get_blockID(2), get_blockID(3), get_blockID(4)];
+
+  function array_getElementById (i_num, j_size, element_name) {
+    let array = [];
+    let j;
+    for (j = 0; j < j_size; j++) {
+      array[j] = document.getElementById(element_name + i_num + '-' + j);
+    }
+    return array;
+  } 
+  function get_blockID(i_num) {
+    return array_getElementById(i_num, 8, 'blocksID');
+  }
 
   let margin_top_value = 520;
   let vertically = -6;
@@ -54,6 +67,5 @@
     if (event.key === 'l') go_right.onclick()
     if (event.keyCode === 32 && is_alive) start_button.onclick();
   }
-
 
 })();
