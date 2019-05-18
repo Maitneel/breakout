@@ -27,5 +27,5 @@
     racket.style.marginLeft = racket_margin_left + 'px';
   }
 
-  setInterval(move_ball, 40);
+  //setInterval(move_ball, 40);
 })();

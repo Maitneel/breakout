@@ -57,5 +57,10 @@ height: 65px;
   background-color: blue;
   margin-top: 520px;
   margin-left: 390px;
+}
 
+.control-area {
+  width: 800px;
+  margin: auto;
+  text-align: center;
 }
