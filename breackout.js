@@ -8,7 +8,12 @@
   const go_left = document.getElementById('go-left');
   const go_right = document.getElementById('go-right');
   const blocksID = [get_blockID(0), get_blockID(1), get_blockID(2), get_blockID(3), get_blockID(4)];
-
+  
+  let is_blocks_bracked = [[], [], [], [], []];
+  for (let i = 0; i < 5; i++) {
+    for (let j = 0; j < 8; j++) is_blocks_bracked[i][j] = false;
+  }
+  
   function array_getElementById (i_num, j_size, element_name) {
     let array = [];
     let j;
@@ -67,5 +72,6 @@
     if (event.key === 'l') go_right.onclick()
     if (event.keyCode === 32 && is_alive) start_button.onclick();
   }
+
 
 })();
