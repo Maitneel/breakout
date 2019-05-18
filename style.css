@@ -10,7 +10,7 @@ body {
   background-color: #ffffff;
 }
 
-.brocks-and-racket-area {
+.blocks-and-racket-area {
   position: absolute;
   z-index: 1
 }
@@ -19,13 +19,13 @@ body {
 height: 65px;
 }
 
-.brocks-w {
+.blocks-w {
   z-index: 1;
   height: 30px;
   background-color: black;
 }
 
-.brocks-h {
+.blocks-h {
   width: 98px;
   height: 30px;
   border: 1px solid #ffffff;
