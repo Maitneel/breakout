@@ -26,6 +26,24 @@
     return array_getElementById(i_num, 8, 'blocksID');
   }
 
+  function get_block_date(h_position, w_position, h_direction, w_direction) {
+    h_position -= 65;
+    console.log(h_position + ' ' + w_position);
+    if (h_direction == 1) h_position += 20;
+    if (w_direction == 1) w_position += 20;
+    h_position = Math.floor((h_position + 1) / 30);
+    w_position = Math.floor((w_position + 1) / 100);
+    if (h_direction == -1) h_position--;
+    if (w_direction == -1) w_position--;
+    console.log(h_position + ' ' + w_position);
+    return [h_position, w_position];
+  }
+
+  function break_block(blockID_h, blockID_w) {
+    blocksID[blockID_h][blockID_w].style.backgroundColor = '#ffffff';
+    return 0;
+  }
+
   let margin_top_value = 520;
   let vertically = -6;
   let margin_left_value = 390;
@@ -72,6 +90,5 @@
     if (event.key === 'l') go_right.onclick()
     if (event.keyCode === 32 && is_alive) start_button.onclick();
   }
-
 
 })();
