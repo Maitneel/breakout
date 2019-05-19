@@ -28,14 +28,14 @@
 
   function get_block_date(h_position, w_position, h_direction, w_direction) {
     h_position -= 65;
-    console.log(h_position + ' ' + w_position);
+    //console.log(h_position + ' ' + w_position);
     if (h_direction == 1) h_position += 20;
     if (w_direction == 1) w_position += 20;
     h_position = Math.floor((h_position + 1) / 30);
     w_position = Math.floor((w_position + 1) / 100);
-    if (h_direction == -1) h_position--;
-    if (w_direction == -1) w_position--;
-    console.log(h_position + ' ' + w_position);
+    if (h_direction == 1) h_position--;
+    if (w_direction == 1) w_position--;
+    //console.log(h_position + ' ' + w_position);
     return [h_position, w_position];
   }
 
@@ -45,11 +45,22 @@
   }
 
   let margin_top_value = 520;
-  let vertically = -6;
+  let vertically = -5;
   let margin_left_value = 390;
-  let side = 6;
+  let side = 5;
   let is_alive = true;
   function move_ball() {
+    console.log(margin_top_value < 215);
+    if ((65 < margin_top_value || (45 < margin_top_value && 0 < vertically)) && margin_top_value < 215) {
+      //console.log('flag' + margin_top_value + ' ' + margin_left_value);
+      let block_date = get_block_date(margin_top_value, margin_left_value, (vertically / Math.abs(vertically)), (side / Math.abs(side)));
+      if (!is_blocks_bracked[block_date[0]][block_date[1]]) {
+        console.log('flag1');
+        break_block(block_date[0], block_date[1]);
+        if ((margin_top_value - 65) % 30 === 0) vertically *= -1;
+        else side *= -1;
+      }
+    }
     ball.style.marginTop = margin_top_value + 'px';
     ball.style.marginLeft = margin_left_value + 'px';
     margin_top_value += vertically;
@@ -89,6 +100,8 @@
     if (event.key === 'h') go_left.onclick()
     if (event.key === 'l') go_right.onclick()
     if (event.keyCode === 32 && is_alive) start_button.onclick();
+    console.log(event.keyCode);
+    if (event.key === 'Control') clearInterval(move_ball_intervalID);
   }
 
 })();
